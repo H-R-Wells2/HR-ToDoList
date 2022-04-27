@@ -57,7 +57,7 @@
                     <div class="flex-shrink-0 flex items-center">
                         <span class="lg:hidden text-white px-3  text-lg font-medium">To-Do List</span>
 
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-violet-400">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-violet-400">
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40.000000pt"
                                 height="40.000000pt" viewBox="0 0 79.000000 75.000000"
                                 preserveAspectRatio="xMidYMid meet">
@@ -109,11 +109,12 @@
 
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
+
                     <!-- Profile dropdown -->
                     <div class="ml-3 relative">
                         <div class="">
                             <button id="profilebtn" type="button"
-                                class="bg-gray-800  flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                class="bg-gray-800  flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full"
@@ -189,16 +190,16 @@
     <!-- main  -->
     <div class="flex bg-slate-400 justify-center py-12">
 
-        <div class="block container px-20 py-12 lg:px-12 lg:py-12 rounded-lg shadow-lg bg-white lg:max-w-md">
+        <div class="block container max-w-xs px-14 py-10 lg:px-12 lg:py-12 rounded-lg shadow-lg bg-white lg:max-w-md">
             <form>
                 <div class="form-group mb-6">
-                    <label class="form-label inline-block mb-2 text-gray-700 font-semibold">Item Name</label>
+                    <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Item Name</label>
                     <input type="text"
                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding  border border-solid border-gray-300  rounded transition ease-in-out  m-0  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         id="itemname" aria-describedby="emailHelp" placeholder="Item Name">
                 </div>
                 <div class="form-group mb-6">
-                    <label class="form-label inline-block mb-2 text-gray-700 font-semibold">Description</label>
+                    <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Description</label>
                     <textarea
                         class=" form-control block  w-full  px-3  py-1.5  text-base  font-normal text-gray-700  bg-white bg-clip-padding  border border-solid border-gray-300  rounded  transition  ease-in-out   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         id="textarea1" rows="3" placeholder="Description"></textarea>
@@ -206,7 +207,7 @@
 
 
                 <button type="submit"
-                    class=" w-full px-6 py-2.5 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">Add
+                    class=" w-full px-6 py-2.5 bg-cyan-400 text-black font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">Add
                     to list
                 </button>
 
@@ -239,92 +240,107 @@
     <div class="container bg-cyan-200 pb-12">
 
         <div class=" flex justify-center container">
-            <h1 class="font-serif font-extrabold text-2xl py-10">To-Do List</h1>
+            <h1 class="font-serif font-extrabold text-2xl md:text-3xl py-10">To-Do List</h1>
         </div>
 
 
 
 
-        <div class="flex px-10 container flex-col">
-            <div class="overflow-x-auto border-8 border-y-stone-400 border-x-stone-700 sm:-mx-6 lg:-mx-0">
-                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="flex md:px-10 px-3 max-w-full container flex-col">
+            <div class="overflow-x-auto  border-8 border-y-stone-400 border-x-stone-700 min-w-max md:min-w-fit">
+                <div class="py-2 px-1 inline-block min-w-full sm:px-2 lg:px-2">
                     <div class="overflow-hidden">
-                        <table class="min-w-full ">
+                        <table class="min-w-full table-fixed">
                             <thead class="bg-slate-400 border-b">
                                 <tr>
-                                    <th scope="col" class="text-base font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col"
+                                        class="px-1 py-4 w-0 md:px-6 md:text-base font-medium text-gray-900 text-left">
                                         #
                                     </th>
-                                    <th scope="col" class="text-xl font-semibold text-gray-900 px-6 py-4 text-left ">
+                                    <th scope="col"
+                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 md:text-lg font-semibold text-gray-900 text-left ">
                                         Item Name
                                     </th>
 
-                                    <th scope="col" class="text-xl font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col"
+                                        class="px-0 py-4 w-4 md:px-6 md:w-1/2 md:text-lg font-semibold text-gray-900 text-left">
                                         Description
                                     </th>
-                                    <th class="text-xl font-medium text-gray-100 bg-slate-500 text-center">
+                                    <th class="px-2 py-4 w-1/4 md:px-6 md:w-20 font-semibold md:text-lg text-gray-100 bg-slate-500 text-center 
+                                    ">
                                         Delete
                                     </th>
-
-
-
-
                                 </tr>
                             </thead>
+
+
+
                             <tbody>
                                 <tr class="bg-gray-100 border-b">
-                                    <td class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">1</td>
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        Mark
+                                    <td class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">
+                                        1</td>
+                                    <td
+                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-light align-top">
+                                        Markhello mdfk
                                     </td>
-
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        @mdo
+                                    <td
+                                        class="px-0 py-4 w-4 md:px-6 md:w-1/2 text-base md:text-lg text-gray-900 font-light align-top">
+                                        @mdo hello
                                     </td>
-                                    <td class="text-center bg-white">
+                                    <td class="w-1/4 md:w-20 text-center md:text-lg bg-white">
                                         <button
-                                            class="w-4/6 py-2.5 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">Delete</button>
+                                            class="md:w-4/6 py-2.5 w-16 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
+                                            Delete
+                                        </button>
                                     </td>
-
                                 </tr>
-                                <tr class="bg-white border-b">
-                                    <td class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">2</td>
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        Jacob
-                                    </td>
 
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        @fat
-                                    </td>
-                                    <td class="text-center bg-gray-100">
-                                        <button
-                                            class="w-4/6 py-2.5 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">Delete</button>
-                                    </td>
-
-                                </tr>
                                 <tr class="bg-gray-100 border-b">
-                                    <td class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">3</td>
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        Jacob
+                                    <td class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">
+                                        1</td>
+                                    <td
+                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-light align-top">
+                                        Markhello mdfk
                                     </td>
-                                    <td class="text-md text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        @twitter
+                                    <td
+                                        class="px-0 py-4 w-4 md:px-6 md:w-1/2 text-base md:text-lg text-gray-900 font-light align-top">
+                                        @mdo hello
                                     </td>
-                                    <td class="text-center bg-white">
+                                    <td class="w-1/4 md:w-20 text-center md:text-lg bg-white">
                                         <button
-                                            class="w-4/6 py-2.5 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">Delete</button>
+                                            class="md:w-4/6 py-2.5 w-16 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
+                                            Delete
+                                        </button>
                                     </td>
-
                                 </tr>
+
+                                <tr class="bg-gray-100 border-b">
+                                    <td class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">
+                                        1</td>
+                                    <td
+                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-light align-top">
+                                        Markhello mdfk
+                                    </td>
+                                    <td
+                                        class="px-0 py-4 w-4 md:px-6 md:w-1/2 text-base md:text-lg text-gray-900 font-light align-top">
+                                        @mdo hello
+                                    </td>
+                                    <td class="w-1/4 md:w-20 text-center md:text-lg bg-white">
+                                        <button
+                                            class="md:w-4/6 py-2.5 w-16 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
 
     </div>
 

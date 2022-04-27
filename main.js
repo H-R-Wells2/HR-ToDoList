@@ -1,3 +1,4 @@
+// code for mobile menu
 temp1.addEventListener('click', function () {
     document.getElementById('mobmenu').classList.remove('hidden');
     document.getElementById('temp1').classList.remove('block');
@@ -16,30 +17,23 @@ temp2.addEventListener('click', function () {
 
 
 
-let profun = document.getElementById('profilemenu');
-
-
-profilebtn.addEventListener('click',function(){
-    if (profun.classList.contains('hidden')){
-        profun.classList.remove('hidden');
-    }
-    else{
-        profun.classList.add('hidden');
-    };
-})
-
-
+let profilebar = document.getElementById('profilemenu');
 let except = document.getElementById('profilebtn');
-let except2 = document.getElementById('profilemenu');
+
+
+
+
 
 document.addEventListener("click", function () {
-    profun.classList.add('hidden')
+    profilebar.classList.add('hidden')
 }, false);
 except.addEventListener("click", function (ev) {
-    profun.classList.remove('hidden')
-    ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+    if (profilebar.classList.contains('hidden')){
+    profilebar.classList.remove('hidden')
+    ev.stopPropagation();
+    }
 }, false);
-except2.addEventListener("click", function (ev) {
-    profun.classList.remove('hidden')
-    ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+profilebar.addEventListener("click", function (ev1) {
+    profilebar.classList.remove('hidden')
+    ev1.stopPropagation();
 }, false);
