@@ -75,7 +75,8 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite"
+    
   },
   "repository": {
     "type": "git",
