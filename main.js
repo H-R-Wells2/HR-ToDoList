@@ -1,27 +1,28 @@
-// code for mobile menu
+// Code for mobile menu
+let temp1j = document.getElementById('temp1');
+let temp2j = document.getElementById('temp2');
+let mobmenuj = document.getElementById('mobmenu');
 temp1.addEventListener('click', function () {
-    document.getElementById('mobmenu').classList.remove('hidden');
-    document.getElementById('temp1').classList.remove('block');
-    document.getElementById('temp1').classList.add('hidden');
-    document.getElementById('temp2').classList.add('block');
-    document.getElementById('temp2').classList.remove('hidden');
+    mobmenuj.classList.remove('hidden');
+    temp1j.classList.remove('block');
+    temp1j.classList.add('hidden');
+    temp2j.classList.add('block');
+    temp2j.classList.remove('hidden');
 });
 
 temp2.addEventListener('click', function () {
-    document.getElementById('mobmenu').classList.add('hidden');
-    document.getElementById('temp1').classList.add('block');
-    document.getElementById('temp1').classList.remove('hidden');
-    document.getElementById('temp2').classList.remove('block');
-    document.getElementById('temp2').classList.add('hidden');
+    mobmenuj.classList.add('hidden');
+    temp1j.classList.add('block');
+    temp1j.classList.remove('hidden');
+    temp2j.classList.remove('block');
+    temp2j.classList.add('hidden');
 });
+
 
 
 
 let profilebar = document.getElementById('profilemenu');
 let except = document.getElementById('profilebtn');
-
-
-
 
 // profilemenu
 document.addEventListener("click", function () {
@@ -54,12 +55,20 @@ function getAndUpdate() {
         itemJsonArray = [];
         itemJsonArray.push([tit, desc]);
         localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+
+    }
+    else if (tit == ""){
+        alert("Title cannot be empty!!!");
+        console.log("List is updated");
+
     }
     else {
         itemJsonArrayStr = localStorage.getItem('itemsJson')
         itemJsonArray = JSON.parse(itemJsonArrayStr);
         itemJsonArray.push([tit, desc]);
         localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        console.log("List is updated");
+
     }
     update();
     // console.log("MDFK");
@@ -79,36 +88,47 @@ function update() {
         itemJsonArrayStr = localStorage.getItem('itemsJson')
         itemJsonArray = JSON.parse(itemJsonArrayStr);
     }
-
-
     // Populate the table
     let str = "";
     itemJsonArray.forEach((element, index) => {
         str += `
         <tr class="bg-gray-100 border-b">
-            <td id="tit${index}" class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">${index +1}</td>
-            <td class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-light align-top">${element[0]}</td>
-            <td class="px-0 py-4 w-4 md:px-6 md:w-1/2 text-base md:text-lg text-gray-900 font-light align-top">${element[1]}</td>
+            <td id="tit${index}" class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">${index + 1}</td>
+            <td class="max-w-0 px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-normal align-top break-words">${element[0]}</td>
+            <td class="max-w-0 px-0 py-4 w-4 md:px-6 md:w-1/2 text-base md:text-lg text-gray-900 font-light align-top break-words">${element[1]}</td>
             <td class="w-1/4 md:w-20 text-center md:text-lg bg-white">
             <button onclick="deleted(${index})" 
                 class=" md:w-4/6 py-2.5 w-16 bg-cyan-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition duration-150 ease-in-out">Delete
             </button>
             </td>
         </tr>
-        `;        
+        `;
     });
     document.getElementById("tablebody").innerHTML = str;
 }
 
+
+// Nothing To-Do
+function nothing() {
+    if (itemJsonArrayStr == "[]") {
+        console.log("Nothing in To-Do list");
+        document.getElementById("nothingtodo").classList.remove("hidden");
+    }
+    else{
+        document.getElementById("nothingtodo").classList.add("hidden");
+    }
+}
 
 
 
 add = document.getElementById("addbtn");
 add.addEventListener("click", getAndUpdate);
 update();
+nothing();
 
 
-// delete
+
+// delete list content
 function deleted(itemIndex) {
     console.log("Delete", itemIndex);
     itemJsonArrayStr = localStorage.getItem('itemsJson')
@@ -117,25 +137,44 @@ function deleted(itemIndex) {
     itemJsonArray.splice(itemIndex, 1);
     localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
     update();
+    nothing();
 }
 
 
 
 
-// clear storage
-function clearStorage(){
-    if (confirm("Do you areally want to clear?")){
-    console.log('Clearing the storage')
-    localStorage.clear();
-    update()
+// clear list
+function clearStorage() {
+    if (confirm("Do you areally want to clear?")) {
+        console.log('Clearing the list');
+        localStorage.clear();
+        update();
+        document.getElementById("nothingtodo").classList.remove("hidden");
+        console.log('List is cleared');
+    }
+    else {
+        document.getElementById("nothingtodo").classList.add("hidden");
     }
 }
 
 
-// scroll to id
-add.addEventListener("click",()=>{
-    document.getElementById("footer").scrollIntoView();
+
+let descriptionj = document.getElementById("description");
+let titlej = document.getElementById("title");
+// Clear inputs
+add.addEventListener("click", () => {
+    descriptionj.setAttribute("placeholder", "Description");
+    descriptionj.value = null;
+    titlej.value = null;
+    titlej.setAttribute("placeholder", "Title Name");
+    nothing();
 })
+
+
+
+
+
+
 
 
 // add.addEventListener("click",()=>{

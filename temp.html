@@ -117,9 +117,8 @@
                                 class="bg-gray-800  flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="">
+                                <img class="h-9 w-9 rounded-full"
+                                    src="img/hrwells.jpg" alt="">
                             </button>
                         </div>
 
@@ -129,11 +128,11 @@
                         <div id="profilemenu"
                             class=" hidden transition-all ease-in-out origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="#" class="md:hover:bg-slate-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="#" class="md:hover:bg-slate-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <a href="#" class="md:hover:bg-slate-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-2">Sign out</a>
                         </div>
 
@@ -192,11 +191,11 @@
 
         <div class="block container max-w-xs px-14 py-10 lg:px-12 lg:py-12 rounded-lg shadow-lg bg-white lg:max-w-md">
             <form>
-                <div class="form-group mb-6">
+                <div id="titlediv" class="form-group mb-6">
                     <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Title</label>
                     <input id="title" type="text"
                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding  border border-solid border-gray-300  rounded transition ease-in-out  m-0  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="itemname" aria-describedby="emailHelp" placeholder="Item Name">
+                         aria-describedby="emailHelp" placeholder="Title Name">
                 </div>
                 <div class="form-group mb-6">
                     <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Description</label>
@@ -205,12 +204,16 @@
                         id="textarea1" rows="3" placeholder="Description"></textarea>
                 </div>
 
-
-                <button type="submit" id="addbtn"
-                    class=" w-full px-6 py-2.5 bg-cyan-400 text-black font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
-                    <a href="#footer"> Add to list</a>
-                </button>
-
+                <div class="flex">
+                    <button type="submit" id="addbtn"
+                        class=" w-full mx-2 px-2 py-1 md:py-2.5 bg-cyan-400 text-black font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
+                        <a href="#list"> Add to list</a>
+                    </button>
+                    <button type="submit" onclick="clearStorage()"
+                        class=" w-full mx-2 px-2 py-1 md:py-2.5 bg-cyan-400 text-black font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-cyan-600 hover:shadow-lg focus:bg-cyan-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg active:text-white  transition  duration-150 ease-in-out">
+                        <a href="#list"> Clear List </a>
+                    </button>
+                </div>
                 </p>
             </form>
         </div>
@@ -240,7 +243,7 @@
     <div class="container bg-cyan-200 pb-12">
 
         <div class=" flex justify-center container">
-            <h1 class="font-serif font-extrabold text-2xl md:text-3xl py-10">To-Do List</h1>
+            <h1 id="list" class="font-serif font-extrabold text-2xl md:text-3xl py-10">To-Do List</h1>
         </div>
 
 
@@ -273,6 +276,15 @@
                                 </tr>
                             </thead>
 
+                            <tbody id="nothingtodo">
+                                <tr class="bg-gray-100 border-b">
+                                    <td colspan="4"
+                                        class=" px-0 py-4 w-2 md:px-6 md:w-1/4 col- text-base md:text-lg text-gray-900 font-normal text-center align-top">
+                                        You got nothing To-Do 😪
+                                    </td>
+                                </tr>
+                            </tbody>
+
 
 
                             <tbody id="tablebody">
@@ -280,7 +292,7 @@
                                     <td class="px-1 py-4 w-0 md:px-6 text-base font-medium text-gray-900 align-top">
                                         1</td>
                                     <td
-                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-light align-top">
+                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 text-base md:text-lg text-gray-900 font-normal align-top">
                                         Markhello mdfk
                                     </td>
                                     <td
