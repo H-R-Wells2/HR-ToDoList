@@ -155,6 +155,7 @@ function clearStorage() {
     else {
         document.getElementById("nothingtodo").classList.add("hidden");
     }
+    nothing();
 }
 
 

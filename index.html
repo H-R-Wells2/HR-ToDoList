@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/png" href="img/favicon1.png" />
 </head>
 
 <body>
@@ -195,7 +196,7 @@
                     <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Title</label>
                     <input id="title" type="text"
                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding  border border-solid border-gray-300  rounded transition ease-in-out  m-0  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                         aria-describedby="emailHelp" placeholder="Title Name">
+                        placeholder="Title Name">
                 </div>
                 <div class="form-group mb-6">
                     <label class="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Description</label>
@@ -239,16 +240,16 @@
 
 
     <!-- list  -->
-    <div class="container bg-cyan-200 pb-12">
+    <div class="container min-w-full bg-cyan-200 pb-12">
 
-        <div class=" flex justify-center container">
+        <div class=" flex min-w-full justify-center container">
             <h1 id="list" class="font-serif font-extrabold text-2xl md:text-3xl py-10">To-Do List</h1>
         </div>
 
 
 
 
-        <div class="flex md:px-10 px-3 max-w-full container flex-col">
+        <div class="flex md:px-10 px-3 max-w-full min-w-full container flex-col">
             <div class="overflow-x-auto  border-8 border-y-stone-400 border-x-stone-700 min-w-max md:min-w-fit">
                 <div class="py-2 px-1 inline-block min-w-full sm:px-2 lg:px-2">
                     <div class="overflow-hidden">
@@ -260,7 +261,7 @@
                                         #
                                     </th>
                                     <th scope="col"
-                                        class="px-0 py-4 w-2 md:px-6 md:w-1/4 md:text-lg font-semibold text-gray-900 text-left ">
+                                        class="px-4 py-4 w-4 md:px-6 md:w-1/4 md:text-lg font-semibold text-gray-900 text-left ">
                                         Title
                                     </th>
 
